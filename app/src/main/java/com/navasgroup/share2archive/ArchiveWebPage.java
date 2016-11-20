@@ -37,6 +37,8 @@ public class ArchiveWebPage extends Activity {
         String url = (n > 0) ? source.substring(n) : source ;       // strip anything before URL
         url = url.split("\\s",2)[0];   // strip any trailing material starting with whitespace
         Log.d(TAG, "URL: \"" + url + "\"");
+        url = Uri.encode(url);                  // encode URL
+        Log.d(TAG, "Encoded: \"" + url + "\"");
         return url;
     }
 }
