@@ -30,13 +30,14 @@ public class ArchiveWebPage extends Activity {
         finish();   // i'm done
     }
 
-    // extract URL to handle bad browsers that pad URL before and/or after
+    // extract URL to handle bad browsers that pad URL before and/or after; e.g.,
+    // "IBM - United States http://www.ibm.com/us-en/	(Share from CM Browser)"
     String getURL(String source) {
-        int n = source.indexOf("http://");      // find HTTP
-        if (n < 0) {
-            n = source.indexOf("https://");     // else find HTTPS
-        }
-        String url = (n > 0) ? source.substring(n) : source ;       // strip anything before URL
+        String url = source.toLowerCase();      // lower case for scan
+        int r = url.indexOf("http://");         // find HTTP
+        int s = url.indexOf("https://");        // find HTTPS
+        int n = Math.min((r < 0 ? s : r), (s < 0 ? r : s));		// take first http or https
+        url = (n > 0) ? source.substring(n) : source ;			// strip anything before URL
         url = url.split("\\s",2)[0];   // strip any trailing material starting with whitespace
         Log.d(TAG, "URL: \"" + url + "\"");
         url = Uri.encode(url);                  // encode URL
