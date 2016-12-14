@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 public class ArchiveWebPage extends Activity {
     private static final String TAG = "Share2Archive";
+    // archive.today works around possible blocking of archive.is
+    private static final String PRE = "https://archive.today/?run=1&url=";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -16,7 +18,7 @@ public class ArchiveWebPage extends Activity {
         String sharedText = getIntent().getStringExtra(Intent.EXTRA_TEXT);  // get URL
         Log.i(TAG, "EXTRA_TEXT: \"" + sharedText + "\"");
         if (sharedText != null) {
-            Uri url = Uri.parse("https://archive.is/?run=1&url=" + getURL(sharedText));
+            Uri url = Uri.parse(PRE + getURL(sharedText));
             Intent intent = new Intent(Intent.ACTION_VIEW, url);
             if (intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
