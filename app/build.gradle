@@ -7,8 +7,8 @@ android {
         applicationId "com.navasgroup.share2archive"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 7
-        versionName "1.50"
+        versionCode 8
+        versionName "1.60"
         setProperty("archivesBaseName", "Share2Archive-$versionName")
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
