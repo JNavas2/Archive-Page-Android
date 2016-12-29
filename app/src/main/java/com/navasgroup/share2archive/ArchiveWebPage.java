@@ -16,7 +16,7 @@ public class ArchiveWebPage extends Activity {
         String sharedText = getIntent().getStringExtra(Intent.EXTRA_TEXT);  // get URL
         Log.i(tag, "EXTRA_TEXT: \"" + sharedText + "\"");
         if (sharedText != null) {
-            Uri url = Uri.parse(pre + getURL(sharedText));
+            Uri url = Uri.parse(pre + getURL(sharedText, ""));          // allow none when encoding
             Intent intent = new Intent(Intent.ACTION_VIEW, url);
             if (intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
@@ -30,7 +30,7 @@ public class ArchiveWebPage extends Activity {
 
     // extract URL to handle bad browsers that pad URL before and/or after; e.g.,
     // "IBM - United States http://www.ibm.com/us-en/	(Share from CM Browser)"
-    String getURL(String source) {
+    String getURL(String source, String allow) {
         String tag = getString(R.string.app_name);				// for logging
         String url = source.toLowerCase();      				// lower case for scan
         int r = url.indexOf("http://");         				// find HTTP
@@ -39,7 +39,7 @@ public class ArchiveWebPage extends Activity {
         url = (n > 0) ? source.substring(n) : source ;			// strip anything before URL
         url = url.split("\\s",2)[0];   // strip any trailing material starting with whitespace
         Log.d(tag, "URL: \"" + url + "\"");
-        url = Uri.encode(url, "://?=&");						// encode URL
+        url = Uri.encode(url, allow);						    // encode URL
         Log.d(tag, "Encoded: \"" + url + "\"");
         return url;
     }
