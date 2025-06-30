@@ -15,7 +15,7 @@ android {
         //noinspection OldTargetApi
         targetSdkVersion 35
         versionCode 20
-        versionName "2.20"
+        versionName "2.30"
         setProperty("archivesBaseName", "Share2Archive-$versionName")
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
