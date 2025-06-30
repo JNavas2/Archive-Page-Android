@@ -1,14 +1,21 @@
-apply plugin: 'com.android.application'
+// remove the old line: apply plugin: 'com.android.application'
+// And replace it with this block at the top of the file:
+plugins {
+    id 'com.android.application'
+    // if you use kotlin, add this too
+    // id 'org.jetbrains.kotlin.android'
+}
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    namespace = 'com.navasgroup.share2archive'
+    compileSdkVersion 35
     defaultConfig {
         applicationId "com.navasgroup.share2archive"
-        minSdkVersion 15
-        targetSdkVersion 25
-        versionCode 11
-        versionName "1.80"
+        minSdkVersion 21
+        //noinspection OldTargetApi
+        targetSdkVersion 35
+        versionCode 20
+        versionName "2.20"
         setProperty("archivesBaseName", "Share2Archive-$versionName")
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -21,10 +28,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.0.0'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    testImplementation 'junit:junit:4.12'
 }
