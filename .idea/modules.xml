@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Share2Archive.iml" filepath="$PROJECT_DIR$/Share2Archive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Share2Archive.iml" filepath="$PROJECT_DIR$/.idea/modules/Share2Archive.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Share2Archive.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Share2Archive.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Share2Archive.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Share2Archive.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Share2Archive.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Share2Archive.app.main.iml" />

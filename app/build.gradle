@@ -1,8 +1,6 @@
-// remove the old line: apply plugin: 'com.android.application'
-// And replace it with this block at the top of the file:
 plugins {
     id 'com.android.application'
-    // if you use kotlin, add this too
+    // Uncomment if you use Kotlin
     // id 'org.jetbrains.kotlin.android'
 }
 
@@ -12,12 +10,11 @@ android {
     defaultConfig {
         applicationId "com.navasgroup.share2archive"
         minSdkVersion 21
-        //noinspection OldTargetApi
         targetSdkVersion 35
         versionCode 20
         versionName "2.30"
         setProperty("archivesBaseName", "Share2Archive-$versionName")
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -29,9 +26,11 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test:rules:1.5.2'
+    testImplementation 'junit:junit:4.13.2'
+    // Uncomment if you use Kotlin
+    // implementation 'androidx.core:core-ktx:1.13.1'
 }
