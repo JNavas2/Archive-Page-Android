@@ -12,6 +12,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
+// --- Minimal additions for What's New ---
+import android.text.Html;
+import android.widget.TextView;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+// --- End additions ---
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -83,6 +92,9 @@ public class MainActivity extends AppCompatActivity {
         int savedId = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
                 .getInt(PREF_KEY_DOMAIN, DEFAULT_ID);
         selectRadioButton(savedId);
+
+        // --- Minimal addition: Populate What's New block ---
+        populateWhatsNewTextView();
     }
 
     // Clear all RadioButtons
@@ -127,5 +139,34 @@ public class MainActivity extends AppCompatActivity {
     public static String getPrependForDomain(String domain) {
         String pre = PREPEND_MAP.get(domain);
         return pre != null ? pre : PREPEND_MAP.get("archive.today");
+    }
+
+    // --- Minimal addition: Display What's New content from JSON asset ---
+    private void populateWhatsNewTextView() {
+        TextView whatsNewTextView = findViewById(R.id.whatsNewTextView);
+        if (whatsNewTextView == null) return;
+        try {
+            InputStream is = getAssets().open("whats-new.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            String json = new String(buffer, StandardCharsets.UTF_8);
+
+            JSONArray arr = new JSONArray(json);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < arr.length(); i++) {
+                JSONObject obj = arr.getJSONObject(i);
+                String text = obj.getString("text");
+                sb.append(text);
+                if (i < arr.length() - 1) {
+                    sb.append("<br>");
+                }
+            }
+            whatsNewTextView.setText(Html.fromHtml(sb.toString()));
+        } catch (Exception e) {
+            e.printStackTrace();
+            whatsNewTextView.setText("Unable to load What's New.");
+        }
     }
 }

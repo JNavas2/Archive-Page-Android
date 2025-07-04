@@ -2,9 +2,10 @@
     <string name="app_name">Share2Archive</string>
     <string name="AppHelp1"><b>Preserve web page in Archive Today</b></string>
     <string name="AppHelp2">When on a webpage in a web browser (e.g., Chrome), use <b>Share</b> action and select this app to open that webpage in Archive Today (using default browser).</string>
+    <string name="WhatsNew"><b>What\'s New:</b></string>
     <string name="domain"><b>Archive domain</b></string>
-    <string name="AppHelp3"><b>Archive Today</b> is a webpage time capsule. It takes a \'snapshot\' of a webpage that will always be online even if original page disappears. It saves text and graphical copy of the webpage for better accuracy and provides a short, reliable link to an unalterable record of the webpage.)</string>
-    <string name="Privacy"><b>Privacy</b>: Shared URL is opened in Archive Today when and only Shared by user. No user data is otherwise gathered or shared.</string>
+    <string name="AppHelp3"><b>Archive Today</b> is a webpage time capsule. It takes a \'snapshot\' of a webpage that will always be online even if original page disappears. It saves text and graphical copy of the webpage for better accuracy and provides a short, reliable link to an unalterable record of the webpage.</string>
+    <string name="Privacy"><b>Privacy</b>: Shared URL is opened in Archive Today when and only when Shared by user. No user data is otherwise gathered or shared.</string>
     <string name="AppHelp4"><b>Disclaimers</b>: • Use at your own risk.</string>
     <string name="AppHelp5">• <i>Not</i> affiliated with Archive Today.</string>
 </resources>

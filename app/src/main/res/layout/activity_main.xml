@@ -25,21 +25,37 @@
             android:orientation="vertical" >
 
             <TextView
+                android:id="@+id/appHelp1TextView"
                 android:text="@string/AppHelp1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/textView1"
                 tools:ignore="VisualLintLongText" />
 
             <TextView
+                android:id="@+id/appHelp2TextView"
                 android:text="@string/AppHelp2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/textView2"
                 tools:ignore="VisualLintLongText" />
+
+            <TextView
+                android:id="@+id/whatsNewHeader"
+                android:text="@string/WhatsNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                tools:ignore="VisualLintLongText" />
+
+            <TextView
+                android:id="@+id/whatsNewTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:background="@android:color/transparent" />
 
             <!-- Archive Domain Radio Button Group START -->
             <LinearLayout
@@ -55,6 +71,7 @@
 
                 <!-- Archive Domain Header -->
                 <TextView
+                    android:id="@+id/archiveDomainHeader"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/domain"
@@ -83,6 +100,7 @@
 
                 <!-- Row 2 & 3 & 4: two side-by-side groups of 3 radio buttons each -->
                 <LinearLayout
+                    android:id="@+id/radioRows"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -153,38 +171,38 @@
             <!-- Archive Domain Radio Button Group END -->
 
             <TextView
+                android:id="@+id/appHelp3TextView"
                 android:text="@string/AppHelp3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/textView3"
                 tools:ignore="VisualLintLongText" />
 
             <TextView
+                android:id="@+id/privacyTextView"
                 android:text="@string/Privacy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="2dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/textView"
                 tools:ignore="VisualLintLongText" />
 
             <TextView
+                android:id="@+id/appHelp4TextView"
                 android:text="@string/AppHelp4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="2dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/textView4"
                 tools:ignore="VisualLintLongText" />
 
             <TextView
+                android:id="@+id/appHelp5TextView"
                 android:text="@string/AppHelp5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:id="@+id/textView5"
                 tools:ignore="VisualLintLongText" />
         </LinearLayout>
     </ScrollView>
