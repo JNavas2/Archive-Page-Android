@@ -15,21 +15,199 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_above="@id/bottomButtonBar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
             android:orientation="vertical" >
 
             <TextView
-                android:text="@string/AppHelp"
+                android:text="@string/AppHelp1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:id="@+id/textView1"
+                tools:ignore="VisualLintLongText" />
+
+            <TextView
+                android:text="@string/AppHelp2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:id="@+id/textView2"
+                tools:ignore="VisualLintLongText" />
+
+            <!-- Archive Domain Radio Button Group START -->
+            <LinearLayout
+                android:id="@+id/archiveDomainGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="0dp"
+                android:background="@android:color/white"
+                android:elevation="2dp"
+                android:padding="8dp">
+
+                <!-- Archive Domain Header -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/domain"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingBottom="0dp"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Row 1: archive.today -->
+                <LinearLayout
+                    android:id="@+id/radioRowTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <RadioButton
+                        android:id="@+id/rb_today"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="48dp"
+                        android:textStyle="bold"
+                        android:text="archive.today (recommended)" />
+                </LinearLayout>
+
+                <!-- Row 2 & 3 & 4: two side-by-side groups of 3 radio buttons each -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Left column of 3 radio buttons -->
+                    <LinearLayout
+                        android:id="@+id/radioColumnLeft"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_is"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="archive.is"
+                            android:layout_marginBottom="12dp"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_ph"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:text="archive.ph"
+                            android:layout_marginBottom="12dp"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_md"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="36dp"
+                            android:text="archive.md"/>
+                    </LinearLayout>
+
+                    <!-- Right column of 3 radio buttons -->
+                    <LinearLayout
+                        android:id="@+id/radioColumnRight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_vn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="archive.vn"
+                            android:layout_marginBottom="12dp"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_li"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:text="archive.li"
+                            android:layout_marginBottom="12dp"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_fo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="36dp"
+                            android:text="archive.fo"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- Archive Domain Radio Button Group END -->
+
+            <TextView
+                android:text="@string/AppHelp3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:id="@+id/textView3"
+                tools:ignore="VisualLintLongText" />
+
+            <TextView
+                android:text="@string/Privacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:id="@+id/textView"
-                android:layout_margin="16dp" />
+                tools:ignore="VisualLintLongText" />
+
+            <TextView
+                android:text="@string/AppHelp4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:id="@+id/textView4"
+                tools:ignore="VisualLintLongText" />
+
+            <TextView
+                android:text="@string/AppHelp5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:id="@+id/textView5"
+                tools:ignore="VisualLintLongText" />
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomButtonBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/closeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Close"
+            android:layout_marginEnd="24dp"/>
+
+        <Button
+            android:id="@+id/helpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Help"/>
+    </LinearLayout>
 </RelativeLayout>

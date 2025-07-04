@@ -11,8 +11,8 @@ android {
         applicationId "com.navasgroup.share2archive"
         minSdkVersion 21
         targetSdkVersion 35
-        versionCode 22
-        versionName "2.31"
+        versionCode 23
+        versionName "2.40"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

@@ -1,7 +1,5 @@
 // ArchiveWebPage.java for Archive Page (formerly Share2Archive) Android app
 // Copyright © 2025 John Navas, All rights reserved.
-// Android Activity that receives shared URL, converts it to archive domain, then opens it in default browser.
-// Usage: Register this activity as a share target for URLs in AndroidManifest.xml
 
 package com.navasgroup.share2archive;
 
@@ -10,7 +8,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.webkit.URLUtil;
 import android.widget.Toast;
@@ -24,7 +21,15 @@ public class ArchiveWebPage extends Activity {
         super.onCreate(savedInstanceState);
 
         String tag = getString(R.string.app_name); // for logging
-        String pre = getString(R.string.prepend);  // prepend the URL (e.g., "https://archive.today/?run=1&url=")
+
+        // --- Load selected domain from SharedPreferences ---
+        SharedPreferences prefs = getSharedPreferences("archive_page_prefs", MODE_PRIVATE);
+        int domainId = prefs.getInt("selected_domain", R.id.rb_today);
+        String domain = MainActivity.getDomainFromId(domainId);
+
+        // --- Build prepend string for the selected domain ---
+        String pre = MainActivity.getPrependForDomain(domain);
+
         String sharedText = getIntent().getStringExtra(Intent.EXTRA_TEXT); // get URL
         Log.i(tag, "EXTRA_TEXT: \"" + sharedText + "\"");
         String urlText = getURL(sharedText);
@@ -37,11 +42,10 @@ public class ArchiveWebPage extends Activity {
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             if (intent.resolveActivity(getPackageManager()) != null) {
                 // Success: show toast and increment counter
-                SharedPreferences prefs = getSharedPreferences("archive_page_prefs", MODE_PRIVATE);
                 int toastCount = prefs.getInt(TOAST_COUNT_KEY, 0) + 1;
                 prefs.edit().putInt(TOAST_COUNT_KEY, toastCount).apply();
 
-                String toastMsg = "URL shared to archive.today";
+                String toastMsg = "URL shared to " + domain;
                 if (isSpecialToastCount(toastCount)) {
                     toastMsg += "\nNEW NAME next update: Archive Page";
                 }
