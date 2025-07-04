@@ -1,4 +1,4 @@
-Archive Page Non-Commercial License
+# Non-Commercial License
 
 Copyright (c) 2025 John Navas
 
