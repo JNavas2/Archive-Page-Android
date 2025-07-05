@@ -11,7 +11,6 @@ Share links from any Android app, and preserve content with a single tap.
 - 🏷️ **Choose your preferred Archive Today alias** (customizable in-app)
 - 🔒 **Privacy-first**: No analytics, no tracking, no ads
 - 🌓 **Simple, clean UI** for speed and clarity
-- 📱 **Supports Android 5.0+** (API 21 and up)
 
 ---
 
@@ -29,6 +28,13 @@ Share links from any Android app, and preserve content with a single tap.
 
 ---
 
+## ⚠️ Limitations
+
+- Archived page may open in the *same* or a *new* browser tab depending on the browser, not this app.
+- Supports Android 5.0 (Lollipop) and later
+
+---
+
 ## 🛡️ Privacy
 
 - Your URL is opened at Archive Today only when initiated by you.
@@ -43,7 +49,7 @@ Share links from any Android app, and preserve content with a single tap.
 A: It preserves web content and protects against link rot.
 
 **Q: Is my data safe?**  
-A: Yes. The app processes links locally and only sends them to the archive service you choose.
+A: Yes. The app processes links locally and only sends them to the archive domain you choose.
 
 ---
 
