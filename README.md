@@ -49,8 +49,8 @@ Share links from any Android app, and preserve content with a single tap.
 **Q: Why use Archive Today?**  
 A: It preserves web content and protects against link rot.
 
-**Q: Does this work on desktop?**
-A: For similar functionality on desktop, see Archive Page extensions (same icon).
+**Q: Does this work on desktop?**   
+A: For similar functionality on desktop, see [Archive Page extensions](../../../Archive-Page/tree/main#archive-page) (same icon).
 
 **Q: Is my data safe?**  
 A: Yes. The app processes links locally and only sends them to the archive domain you choose.
