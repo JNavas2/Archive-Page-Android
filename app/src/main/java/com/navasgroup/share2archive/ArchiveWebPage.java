@@ -13,8 +13,8 @@ import android.webkit.URLUtil;
 import android.widget.Toast;
 
 public class ArchiveWebPage extends Activity {
-    private static final String TOAST_COUNT_KEY = "toast_count";
-    private static final int[] SPECIAL_TOAST_COUNTS = {1, 3, 5};
+    private static final String TOAST_COUNT_KEY = "new_toast_count";
+    private static final int[] SPECIAL_TOAST_COUNTS = {1, 2, 3};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public class ArchiveWebPage extends Activity {
 
                 String toastMsg = "URL shared to " + domain;
                 if (isSpecialToastCount(toastCount)) {
-                    toastMsg += "\nNEW NAME next update: Archive Page";
+                    toastMsg += "\nNEW NAME: Archive Page";
                 }
                 Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
 

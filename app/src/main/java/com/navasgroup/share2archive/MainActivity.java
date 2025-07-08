@@ -163,7 +163,13 @@ public class MainActivity extends AppCompatActivity {
                     sb.append("<br>");
                 }
             }
-            whatsNewTextView.setText(Html.fromHtml(sb.toString()));
+            // --- FIX: Use non-deprecated Html.fromHtml on API 24+ ---
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                whatsNewTextView.setText(Html.fromHtml(sb.toString(), Html.FROM_HTML_MODE_LEGACY));
+            } else {
+                //noinspection deprecation
+                whatsNewTextView.setText(Html.fromHtml(sb.toString()));
+            }
         } catch (Exception e) {
             e.printStackTrace();
             whatsNewTextView.setText("Unable to load What's New.");
