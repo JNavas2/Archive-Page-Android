@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class ArchiveWebPage extends Activity {
     private static final String TOAST_COUNT_KEY = "new_toast_count";
-    private static final int[] SPECIAL_TOAST_COUNTS = {1, 2, 3};
+    private static final int[] SPECIAL_TOAST_COUNTS = {1};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
